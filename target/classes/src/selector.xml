@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<selectors>
+    <webelement>
+        <HomePage>
+            <element id="btnAppointment" type="id" value="btn-make-appointment"/>
+        </HomePage>
+        <LoginPage>
+            <element id="txtUsername" type="id" value="txt-username"/>
+            <element id="txtPassword" type="id" value="txt-password"/>
+            <element id="btnLogin" type="id" value="btn-login"/>
+        </LoginPage>
+        <AppointmentPage>
+            <element id="slcFacility" type="id" value="combo_facility"/>
+            <element id="txtVisitDate" type="id" value="txt_visit_date"/>
+            <element id="txtComment" type="id" value="txt_comment"/>
+            <!-- Xpath -->
+            <element id="lblTitle" type="xpath" value="//h2"/>
+            <element id="lblErrorMessage" type="xpath" value="//*[@class='lead text-danger']"/>
+            <element id="chkHospitalReadmission" type="xpath" value="//input[@id='chk_hospotal_readmission']"/>
+            <element id="btnBookAppointment" type="id" value="btn-book-appointment"/>
+            <!-- Use String.format() in Java to replace %s with dynamic values at runtime -->
+            <element id="optValue" type="xpath" value="//*[@value='%s']"/>
+            <element id="rbnHealthProgram" type="xpath" value="//*[@type='radio' and @value='%s']"/>
+        </AppointmentPage>
+        <ConfirmationPage>
+            <element id="lblFacilityConfirmation" type="id" value="facility"/>
+            <element id="lblReadmissionConfirmation" type="id" value="hospital_readmission"/>
+            <element id="lblProgramConfirmation" type="id" value="program"/>
+            <element id="lblVisitDateConfirmation" type="id" value="visit_date"/>
+            <element id="lblCommentConfirmation" type="id" value="comment"/>
+
+        </ConfirmationPage>
+    </webelement>
+
+    <android>
+        <native>
+            <element id="androidNeverSavePassword" type="xpath" value="//android.widget.Button[@resource-id='android:id/autofill_save_no']"/>   
+        </native>
+        <HomePage>
+            <element id="androidHomeBtnLogin" type="xpath" value="//android.widget.Button[contains(@resource-id,'btnLogin')]"/>
+            <element id="androidHomeMainBanner" type="xpath" value="//android.widget.ImageView[contains(@resource-id,'imgItemMainBanner')]"/>
+        </HomePage>
+        <LoginPage>
+            <element id="androidTxtUsername" type="xpath" value="//android.widget.EditText[./android.view.View[@content-desc='qa-useridentifier']]"/>
+            <element id="androidTxtPassword" type="xpath" value="//android.widget.EditText[./android.view.View[@content-desc='qa-password']]"/>
+            <element id="androidBtnLogin" type="xpath" value="//android.view.View[@content-desc='qa-button-login']/following-sibling::android.widget.Button"/>
+            <element id="androidWrongCredential" type="xpath" value="//android.widget.TextView[@text='Email/no. handphone/password salah atau belum terverifikasi, yuk di cek kembali!']"/>
+        </LoginPage>
+        <ProfilePage>
+            <element id="lblProfileName" type="xpath" value="//android.widget.TextView[@content-desc='qa-akun-custname']"/>
+            <element id="lblMyPoint" type="xpath" value="//android.widget.TextView[contains(@resource-id,'tvMyPoint')]"/>
+            <element id="btnSetting" type="xpath" value="//android.widget.ImageButton[contains(@resource-id,'btnSettings')]"/>
+            <element id="btnLogout" type="xpath" value="//android.widget.Button[@content-desc='qa-akun-submenu']"/>
+        </ProfilePage>
+        <Footer>
+            <element id="androidBtnProfile" type="xpath" value="//android.widget.FrameLayout[contains(@resource-id,'navigationProfile')]"/>
+        </Footer>
+
+    </android>
+
+
+
+
+</selectors>

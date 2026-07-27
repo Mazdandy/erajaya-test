@@ -61,7 +61,7 @@ public class AndroidTest {
         assertThat(Android.isExist(driver, "androidHomeMainBanner")).isGreaterThan(0);
         Android.clickElement(driver, "androidBtnProfile");
         String profileName = Android.getText(driver, "lblProfileName");
-        String point = Android.getText(driver, "lblMyPoint");
+
         assertThat(profileName).isNotNull();
     }
 }
